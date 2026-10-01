@@ -1,0 +1,19 @@
+{
+  "name": "@vista/simulator",
+  "version": "1.0.0",
+  "description": "100K+ Connected Vehicle Chaos & Telemetry Simulator with Ground Truth Labeling",
+  "main": "src/cli.js",
+  "bin": {
+    "vista-sim": "src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "dev": "node src/cli.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ioredis": "^5.4.2",
+    "kafkajs": "^2.2.4",
+    "pino": "^9.6.0"
+  }
+}
