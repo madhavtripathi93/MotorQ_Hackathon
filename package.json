@@ -1,0 +1,46 @@
+{
+  "name": "vista-platform",
+  "version": "1.0.0",
+  "description": "VISTA - Vehicle Intelligence Signal Trust & Assurance",
+  "private": true,
+  "workspaces": [
+    "backend/api",
+    "backend/simulator",
+    "backend/batch-attribution",
+    "backend/streaming",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npm --workspace=backend/api run dev",
+    "dev:api": "npm --workspace=backend/api run dev",
+    "dev:sim": "npm --workspace=backend/simulator run dev",
+    "dev:batch": "npm --workspace=backend/batch-attribution run dev",
+    "dev:streaming": "npm --workspace=backend/streaming run dev",
+    "dev:frontend": "npm --workspace=frontend run dev",
+    "start": "node backend/api/src/server.js",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:contract": "vitest run tests/contract",
+    "test:integration": "vitest run tests/integration",
+    "test:acceptance": "vitest run tests/acceptance",
+    "test:chaos": "vitest run tests/chaos",
+    "test:ci-gates": "node tests/acceptance/ci-gates.runner.js",
+    "test:perf": "node tests/performance/load_100k.runner.js",
+    "demo": "node backend/simulator/src/cli.js --demo",
+    "seed": "node backend/api/src/shared/db/seed.js"
+  },
+  "keywords": [
+    "connected-vehicles",
+    "telemetry-veracity",
+    "semantic-drift",
+    "decision-grade",
+    "difference-in-differences",
+    "automotive-iot"
+  ],
+  "author": "VISTA Core Engineering",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "supertest": "^7.0.0",
+    "vitest": "^2.1.8"
+  }
+}

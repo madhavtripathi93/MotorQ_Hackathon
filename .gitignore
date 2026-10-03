@@ -1,0 +1,11 @@
+node_modules/
+.env
+.agents/
+graphify-out/
+scratch/
+test_get_incidents.js
+*.mp4
+*.pid
+*.log
+dist/
+.DS_Store

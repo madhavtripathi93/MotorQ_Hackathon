@@ -1,0 +1,48 @@
+{
+  "type": "record",
+  "name": "BatterySocTelemetry",
+  "namespace": "com.vista.telemetry",
+  "doc": "VISTA Canonical Telemetry Schema for battery_soc",
+  "fields": [
+    { "name": "vin", "type": "string" },
+    { "name": "seq", "type": "long" },
+    { "name": "signal", "type": "string", "default": "battery_soc" },
+    { "name": "value", "type": "double" },
+    { "name": "eventTime", "type": "string" },
+    {
+      "name": "provenance",
+      "type": {
+        "type": "record",
+        "name": "ProvenanceRecord",
+        "fields": [
+          { "name": "oem", "type": "string" },
+          { "name": "firmware", "type": "string" },
+          { "name": "otaCampaign", "type": ["null", "string"], "default": null },
+          { "name": "sourceEcu", "type": "string", "default": "BMS_PRIMARY" }
+        ]
+      }
+    },
+    {
+      "name": "context",
+      "type": {
+        "type": "record",
+        "name": "SignalContext",
+        "fields": [
+          { "name": "speed_kmh", "type": "double", "default": 0.0 },
+          { "name": "odometer_km", "type": "double", "default": 0.0 },
+          {
+            "name": "gps",
+            "type": {
+              "type": "record",
+              "name": "GpsCoordinates",
+              "fields": [
+                { "name": "lat", "type": "double" },
+                { "name": "lon", "type": "double" }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
